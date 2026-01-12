@@ -1,0 +1,535 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "boto3": {
+        "pkg-path": "python311Packages.boto3"
+      },
+      "dnspython": {
+        "pkg-path": "python311Packages.dnspython"
+      },
+      "python311": {
+        "pkg-path": "python311"
+      },
+      "requests": {
+        "pkg-path": "python311Packages.requests"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {}
+  },
+  "packages": [
+    {
+      "attr_path": "python311Packages.boto3",
+      "broken": false,
+      "derivation": "/nix/store/80q014b7jdncw23988sxcg7hzsqq0lm5-python3.11-boto3-1.35.30.drv",
+      "description": "AWS SDK for Python",
+      "install_id": "boto3",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-boto3-1.35.30",
+      "pname": "boto3",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.11-boto3-1.35.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/bcq0j6v55hk6ia99yz3bqc30wzrfwybf-python3.11-boto3-1.35.30-dist",
+        "out": "/nix/store/ivkck8g5f37pzrmzpp462ag0i6dvssn8-python3.11-boto3-1.35.30"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.boto3",
+      "broken": false,
+      "derivation": "/nix/store/wysk0b67bn9isjd7p8wqzhkrxppjjd1k-python3.11-boto3-1.35.30.drv",
+      "description": "AWS SDK for Python",
+      "install_id": "boto3",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-boto3-1.35.30",
+      "pname": "boto3",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.11-boto3-1.35.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/7md2mqhhwzq4xz3xprn1xp8qy0grcbab-python3.11-boto3-1.35.30-dist",
+        "out": "/nix/store/cy3yk59jghggi2md2kiyrsqzy91vb32d-python3.11-boto3-1.35.30"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.boto3",
+      "broken": false,
+      "derivation": "/nix/store/1fmkxmszskp1lwx4jl641v32b5hd8dvc-python3.11-boto3-1.35.30.drv",
+      "description": "AWS SDK for Python",
+      "install_id": "boto3",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-boto3-1.35.30",
+      "pname": "boto3",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.11-boto3-1.35.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/2c5cmkirlygxwavr7in1iwn10h42xw66-python3.11-boto3-1.35.30-dist",
+        "out": "/nix/store/z96b33nxhlg7dr3m5zy6z1pc9y2v8bkd-python3.11-boto3-1.35.30"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.boto3",
+      "broken": false,
+      "derivation": "/nix/store/24d562wnky6cv2yaacivb171pac30nj9-python3.11-boto3-1.35.30.drv",
+      "description": "AWS SDK for Python",
+      "install_id": "boto3",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-boto3-1.35.30",
+      "pname": "boto3",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.11-boto3-1.35.30",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/9cgignca9wfn4x8wk8c525p066s5g5r5-python3.11-boto3-1.35.30-dist",
+        "out": "/nix/store/206yjj42islj6hf8vyqcbxd9c9l00340-python3.11-boto3-1.35.30"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.dnspython",
+      "broken": false,
+      "derivation": "/nix/store/g57vhjx2v86kfvhxrg8jv2lf41lz8pr9-python3.11-dnspython-2.7.0.drv",
+      "description": "DNS toolkit for Python",
+      "install_id": "dnspython",
+      "license": "[ ISC ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-dnspython-2.7.0",
+      "pname": "dnspython",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/4mivl332mccg30nggzpmx2ldv9m2fkxd-python3.11-dnspython-2.7.0-dist",
+        "out": "/nix/store/0lgm3hyai8lv6v2v3lg51973p6vc1zhc-python3.11-dnspython-2.7.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.dnspython",
+      "broken": false,
+      "derivation": "/nix/store/58mw847x80gmarxab6s0vl82ajdfcd7i-python3.11-dnspython-2.7.0.drv",
+      "description": "DNS toolkit for Python",
+      "install_id": "dnspython",
+      "license": "[ ISC ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-dnspython-2.7.0",
+      "pname": "dnspython",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/abc0yc0c0f38x4rnn68jmzjdm908kyy3-python3.11-dnspython-2.7.0-dist",
+        "out": "/nix/store/pd1in9r13vffjrldg5rvliwd2ky9na41-python3.11-dnspython-2.7.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.dnspython",
+      "broken": false,
+      "derivation": "/nix/store/dqpiz6lsq1lclfwz8879lp275x6s9wd1-python3.11-dnspython-2.7.0.drv",
+      "description": "DNS toolkit for Python",
+      "install_id": "dnspython",
+      "license": "[ ISC ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-dnspython-2.7.0",
+      "pname": "dnspython",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/qfnhwjh3y1qmm8nb22piv23xg0ps6qv0-python3.11-dnspython-2.7.0-dist",
+        "out": "/nix/store/xfqc9sxw5vxz02pz9d9j6b97q1am9993-python3.11-dnspython-2.7.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.dnspython",
+      "broken": false,
+      "derivation": "/nix/store/pfkmzvnl86wm9dgsaxgc8c5diy5d9ph7-python3.11-dnspython-2.7.0.drv",
+      "description": "DNS toolkit for Python",
+      "install_id": "dnspython",
+      "license": "[ ISC ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-dnspython-2.7.0",
+      "pname": "dnspython",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.7.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/favwakqn22ydflspin4nqi1f3l373sx7-python3.11-dnspython-2.7.0-dist",
+        "out": "/nix/store/q37rwyhvgxvn025kamk6pkvfj9b6ahrv-python3.11-dnspython-2.7.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311",
+      "broken": false,
+      "derivation": "/nix/store/4npqfdp8xqn9jrsrw9apyyh50g1snjml-python3-3.11.10.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python311",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3-3.11.10",
+      "pname": "python311",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.11.10",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vmlgjfqdflax5f2y5r0952fspjzd7npw-python3-3.11.10"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311",
+      "broken": false,
+      "derivation": "/nix/store/c6kbjl5n4w38kx22shs776zg6smryx4s-python3-3.11.10.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python311",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3-3.11.10",
+      "pname": "python311",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.11.10",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/q6kq2z7l096v83i04s3klb8cpijkdc79-python3-3.11.10-debug",
+        "out": "/nix/store/hkfpyjwr9kkq3jljxv62drqfi2vndjqb-python3-3.11.10"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311",
+      "broken": false,
+      "derivation": "/nix/store/r01mfm02ppb5j1jm4kd07xa25ahaw5as-python3-3.11.10.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python311",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3-3.11.10",
+      "pname": "python311",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.11.10",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/6hh041131z6hvk88nirx4rjmi6879sjc-python3-3.11.10"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311",
+      "broken": false,
+      "derivation": "/nix/store/mkvssckwgmrfv2wzlm8ym69rm1z4x8cr-python3-3.11.10.drv",
+      "description": "High-level dynamically-typed programming language",
+      "install_id": "python311",
+      "license": "Python-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3-3.11.10",
+      "pname": "python311",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3-3.11.10",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/jcnym3cicgb2h5dlypy5maaipjmmazw3-python3-3.11.10-debug",
+        "out": "/nix/store/nmqxyr00in2arwrq5qd1qipsanz1yrn5-python3-3.11.10"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.requests",
+      "broken": false,
+      "derivation": "/nix/store/czyfy26wrxx0f005crqg4chdvyavnrik-python3.11-requests-2.32.3.drv",
+      "description": "HTTP library for Python",
+      "install_id": "requests",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-requests-2.32.3",
+      "pname": "requests",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.32.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/lv6wfysdlp3mqqhnz735mlgc4cxpg85s-python3.11-requests-2.32.3-dist",
+        "out": "/nix/store/lw9yzd2gpsxljb5fa2p7mz40l8b9vnqk-python3.11-requests-2.32.3"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.requests",
+      "broken": false,
+      "derivation": "/nix/store/br1700cxhcs8h6k5ri0kdb3x4lhn1swn-python3.11-requests-2.32.3.drv",
+      "description": "HTTP library for Python",
+      "install_id": "requests",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-requests-2.32.3",
+      "pname": "requests",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.32.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/b8cpavdss5ynjipip41nj3ay22yra58g-python3.11-requests-2.32.3-dist",
+        "out": "/nix/store/k80k39my519hph86j0yirhk3f8jsna3m-python3.11-requests-2.32.3"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.requests",
+      "broken": false,
+      "derivation": "/nix/store/a3laqssk9a5ag7l19sdh1asnhyi7azrg-python3.11-requests-2.32.3.drv",
+      "description": "HTTP library for Python",
+      "install_id": "requests",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-requests-2.32.3",
+      "pname": "requests",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.32.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/1n7799rnyszcm6x32hazwcxh0vrhr8k7-python3.11-requests-2.32.3-dist",
+        "out": "/nix/store/1yrdw4p35l8fnjsmm8c2iini7prl2ld0-python3.11-requests-2.32.3"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "python311Packages.requests",
+      "broken": false,
+      "derivation": "/nix/store/4jv5wksb2sg37s60b8dd8iy0s5i259l4-python3.11-requests-2.32.3.drv",
+      "description": "HTTP library for Python",
+      "install_id": "requests",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "python3.11-requests-2.32.3",
+      "pname": "requests",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.32.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/2xa9mlpngcvy55sy42walblpp7a4amf6-python3.11-requests-2.32.3-dist",
+        "out": "/nix/store/43xifg5xlazqdkl0nipjh1mahnhj7lsr-python3.11-requests-2.32.3"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
