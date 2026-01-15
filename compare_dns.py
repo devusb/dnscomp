@@ -199,7 +199,7 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
         if cf_normalized == r53_normalized:
             matches.append(f"✅ {name:<40} {rtype:<6}")
         else:
-            differences.append(f"\n❌ {name} ({rtype}):")
+            differences.append(f"❌ {name} ({rtype}):")
             differences.append(f"   Cloudflare: {cf_normalized}")
             differences.append(f"   Route53:    {r53_normalized}")
 
@@ -218,7 +218,10 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
     if differences:
         print(f"\n\nDIFFERENCES:")
         print("-" * 80)
-        for diff in differences:
+        for i, diff in enumerate(differences):
+            # Add blank line before each new difference (lines starting with ❌)
+            if diff.startswith('❌') and i > 0:
+                print()
             print(diff)
 
     # Summary
