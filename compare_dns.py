@@ -180,28 +180,44 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
         record_groups[key].append(record)
 
     for (name, rtype), records in sorted(record_groups.items()):
-        # Query both nameservers via DNS
-        cf_ttl, cf_values = query_dns(name, rtype, cf_ns)
-        r53_ttl, r53_values = query_dns(name, rtype, r53_ns)
-
-        if cf_values is None:
-            # Shouldn't happen since we got it from API, but handle it
-            continue
-
-        if r53_values is None:
-            missing_r53.append(f"⚠️  {name:<40} {rtype:<6} - NOT FOUND in Route53")
-            continue
-
-        # Normalize values for comparison
-        cf_normalized = sorted([normalize_value(v, rtype) for v in cf_values])
-        r53_normalized = sorted([normalize_value(v, rtype) for v in r53_values])
-
-        if cf_normalized == r53_normalized:
-            matches.append(f"✅ {name:<40} {rtype:<6}")
+        # Handle CNAME flattening at zone apex
+        # Cloudflare allows CNAME at apex but flattens it to A/AAAA in DNS responses
+        is_apex_cname = rtype == 'CNAME' and name == zone_name
+        if is_apex_cname:
+            # Query both A and AAAA for flattened apex CNAME
+            query_types = ['A', 'AAAA']
         else:
-            differences.append(f"❌ {name} ({rtype}):")
-            differences.append(f"   Cloudflare: {cf_normalized}")
-            differences.append(f"   Route53:    {r53_normalized}")
+            query_types = [rtype]
+
+        for query_type in query_types:
+            # Query both nameservers via DNS
+            cf_ttl, cf_values = query_dns(name, query_type, cf_ns)
+            r53_ttl, r53_values = query_dns(name, query_type, r53_ns)
+
+            if cf_values is None:
+                # For apex CNAME, it's OK if AAAA doesn't exist
+                if is_apex_cname:
+                    continue
+                # Shouldn't happen since we got it from API, but handle it
+                continue
+
+            # Display type shows original type for apex CNAME
+            display_type = f"{query_type} (flattened)" if is_apex_cname else rtype
+
+            if r53_values is None:
+                missing_r53.append(f"⚠️  {name:<40} {display_type:<6} - NOT FOUND in Route53")
+                continue
+
+            # Normalize values for comparison
+            cf_normalized = sorted([normalize_value(v, query_type) for v in cf_values])
+            r53_normalized = sorted([normalize_value(v, query_type) for v in r53_values])
+
+            if cf_normalized == r53_normalized:
+                matches.append(f"✅ {name:<40} {display_type:<6}")
+            else:
+                differences.append(f"❌ {name} ({display_type}):")
+                differences.append(f"   Cloudflare: {cf_normalized}")
+                differences.append(f"   Route53:    {r53_normalized}")
 
     # Print results
     print("MATCHES:")
