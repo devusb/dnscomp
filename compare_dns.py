@@ -144,11 +144,45 @@ def normalize_value(value: str, rtype: str) -> str:
     return value
 
 
+def check_dnssec(zone_name: str) -> bool:
+    """Check if DNSSEC is enabled by looking for a DS record at the parent zone.
+    Returns True if DS record exists (DNSSEC active), False if not."""
+    # Determine parent zone
+    parts = zone_name.split('.')
+    parent = '.'.join(parts[1:]) + '.'
+
+    try:
+        # Get parent zone nameservers
+        resolver = dns.resolver.Resolver()
+        parent_ns_answers = resolver.resolve(parent, 'NS')
+        parent_ns = str(parent_ns_answers[0])
+
+        # Query parent NS for DS record
+        parent_resolver = dns.resolver.Resolver()
+        parent_resolver.nameservers = [resolve_nameserver(parent_ns)]
+
+        try:
+            ds_answers = parent_resolver.resolve(zone_name, 'DS')
+            return True
+        except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer):
+            return False
+    except dns.exception.DNSException:
+        return False
+
+
 def compare_zone(zone_name: str, cf_zone_id: str, api_token: str, detailed: bool = False):
     """Compare DNS records between Cloudflare and Route53 nameservers."""
     print(f"\n{'='*80}")
     print(f"Comparing DNS records for: {zone_name}")
     print(f"{'='*80}\n")
+
+    # Check DNSSEC status
+    dnssec_active = check_dnssec(zone_name)
+    if dnssec_active:
+        print(f"⚠️  DNSSEC is ACTIVE (DS record present at parent zone)")
+        print(f"   Migration will break resolution! Remove DS record at registrar first.\n")
+    else:
+        print(f"✅ DNSSEC is disabled (no DS record at parent zone)\n")
 
     # Get records from Cloudflare API
     print("Fetching records from Cloudflare API...")
@@ -253,13 +287,16 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str, detailed: bool
     # Summary
     print(f"\n{'='*80}")
     print(f"Summary:")
+    print(f"  DNSSEC: {'⚠️  ACTIVE - must disable before migration' if dnssec_active else '✅ Disabled'}")
     print(f"  ✅ Matches: {len(matches)}")
     print(f"  ⚠️  Missing in Route53: {len(missing_r53)}")
     print(f"  ❌ Differences: {len([d for d in differences if d.startswith('❌')])}")
     print(f"{'='*80}\n")
 
-    if not differences and not missing_r53:
-        print("🎉 All records match between Cloudflare and Route53!\n")
+    if not differences and not missing_r53 and not dnssec_active:
+        print("🎉 All records match and DNSSEC is clear - safe to migrate!\n")
+    elif not differences and not missing_r53:
+        print("Records match, but DNSSEC must be disabled before migration.\n")
 
 
 def main():
