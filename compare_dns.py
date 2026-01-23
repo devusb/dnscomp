@@ -8,10 +8,12 @@ nameservers via DNS to compare actual responses.
 Usage:
     export CLOUDFLARE_API_TOKEN=your_token_here
     python compare_dns.py
+    python compare_dns.py --detailed    # show record values and TTLs
 """
 
 import os
 import sys
+import argparse
 import dns.resolver
 import dns.rdatatype
 import dns.nameserver
@@ -142,7 +144,7 @@ def normalize_value(value: str, rtype: str) -> str:
     return value
 
 
-def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
+def compare_zone(zone_name: str, cf_zone_id: str, api_token: str, detailed: bool = False):
     """Compare DNS records between Cloudflare and Route53 nameservers."""
     print(f"\n{'='*80}")
     print(f"Comparing DNS records for: {zone_name}")
@@ -206,6 +208,8 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
 
             if r53_values is None:
                 missing_r53.append(f"⚠️  {name:<40} {display_type:<6} - NOT FOUND in Route53")
+                if detailed:
+                    missing_r53.append(f"   Cloudflare: TTL={cf_ttl} {cf_values}")
                 continue
 
             # Normalize values for comparison
@@ -214,10 +218,16 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
 
             if cf_normalized == r53_normalized:
                 matches.append(f"✅ {name:<40} {display_type:<6}")
+                if detailed:
+                    matches.append(f"   TTL={cf_ttl} {cf_normalized}")
             else:
                 differences.append(f"❌ {name} ({display_type}):")
-                differences.append(f"   Cloudflare: {cf_normalized}")
-                differences.append(f"   Route53:    {r53_normalized}")
+                if detailed:
+                    differences.append(f"   Cloudflare: TTL={cf_ttl} {cf_normalized}")
+                    differences.append(f"   Route53:    TTL={r53_ttl} {r53_normalized}")
+                else:
+                    differences.append(f"   Cloudflare: {cf_normalized}")
+                    differences.append(f"   Route53:    {r53_normalized}")
 
     # Print results
     print("MATCHES:")
@@ -253,6 +263,11 @@ def compare_zone(zone_name: str, cf_zone_id: str, api_token: str):
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Compare DNS records between Cloudflare and Route53')
+    parser.add_argument('--detailed', '-d', action='store_true',
+                        help='Print actual record values and TTLs for all records')
+    args = parser.parse_args()
+
     api_token = os.getenv('CLOUDFLARE_API_TOKEN')
     if not api_token:
         print("Error: CLOUDFLARE_API_TOKEN environment variable not set")
@@ -264,7 +279,7 @@ def main():
             continue
 
         try:
-            compare_zone(zone_name, zone_id, api_token)
+            compare_zone(zone_name, zone_id, api_token, detailed=args.detailed)
         except Exception as e:
             print(f"Error processing {zone_name}: {e}\n")
             import traceback
